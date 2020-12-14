@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customers</title>
+    <meta charset="UTF-8"/>
+	<script type="text/javascript" src="webjars/jquery/2.2.3/jquery.min.js"></script>
+	<script type="text/javascript" src="webjars/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="webjars/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"/>
+</head>
+<body>
+	
+	<div class="container" id="homeDiv">
+		<div class="jumbotron text-center">
+			<h1 style="text-align:center">Welcome to Customer Manager</h1>
+		</div>
+	</div>
+	
+	<div style="width:500px; margin : 0 auto;">
+		<form th:action="@{/getdetail/(cid=${customer.cid})}" method="post">
+		  <div class="form-group">
+		    <label>Enter Customer ID :</label>
+		    <input type="number" class="form-control" name="cid" placeholder="Enter customer id"/>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	
+	<br>
+	<div style="width:500px; margin : 0 auto;">
+		<form method="post" th:action="@{/savecustomer}">
+		  <div class="form-group">
+		    <label>Enter Customer ID :</label>
+		    <input type="text" class="form-control" name="cid" placeholder="Enter customer id"/>
+		  </div>
+		  <div class="form-group">
+		    <label>Enter Customer Name :</label>
+		    <input type="text" class="form-control" name="cname" placeholder="Enter customer name"/>
+		  </div>
+		  <div class="form-group">
+		    <label>Enter Customer Email Address</label>
+		    <input type="email" class="form-control" name="cemail" placeholder="Enter customer email"/>
+		    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Add Customer</button>
+		</form>
+	</div>
+</body>
+</html>

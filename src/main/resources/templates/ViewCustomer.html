@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customers</title>
+    <meta charset="UTF-8"/>
+	<script type="text/javascript" src="webjars/jquery/2.2.3/jquery.min.js"></script>
+	<script type="text/javascript" src="webjars/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="webjars/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"/>
+</head>
+<body>
+	<div class="container" id="homeDiv">
+		<div class="jumbotron text-center">
+			<h1 style="text-align:center">View Customer Details</h1>
+			<h2 style="text-align:center"> Details as submitted as follows: </h2>
+		</div>
+	</div>
+
+
+	<div style="width:500px; margin : 0 auto;">
+		<form th:action="@{/getdetail/(cid=${customer.cid})}" method="post">
+		  <div class="form-group">
+		    <label>Enter Customer ID :</label>
+		    <input type="number" class="form-control" name="cid" placeholder="Enter customer id">
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</body>
+</html>
